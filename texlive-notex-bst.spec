@@ -1,6 +1,6 @@
 Name:		texlive-notex-bst
 Version:	42361
-Release:	1
+Release:	2
 Summary:	A BibTeX style that outputs HTML
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/notex-bst
