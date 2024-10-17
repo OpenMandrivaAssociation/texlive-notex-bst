@@ -3,7 +3,7 @@ Version:	42361
 Release:	2
 Summary:	A BibTeX style that outputs HTML
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/notex-bst
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/notex-bst
 License:	pd
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/notex-bst.r%{version}.tar.xz
 BuildArch:	noarch
