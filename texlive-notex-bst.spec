@@ -1,36 +1,20 @@
-Name:		texlive-notex-bst
-Version:	42361
-Release:	2
+%global tl_name notex-bst
+%global tl_revision 76790
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	A BibTeX style that outputs HTML
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/notex-bst
+URL:		https://www.ctan.org/tex-archive/biblio/bibtex/utils/misc/noTeX.bst
 License:	pd
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/notex-bst.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/notex-bst.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-noTeX.bst produces a number of beautifully formatted HTML P
-elements instead of TeX code. It can be used to automatically
-generate bibliographies to be served on the web starting from
-BibTeX files.
+noTeX.bst produces a number of beautifully formatted HTML P elements
+instead of TeX code. It can be used to automatically generate
+bibliographies to be served on the web starting from BibTeX files.
 
-%prep
-%autosetup -p1 -c
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/bibtex/bst/notex-bst
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
